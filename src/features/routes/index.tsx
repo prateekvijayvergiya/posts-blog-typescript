@@ -1,12 +1,17 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from './../components/home/index';
+import UserProfile from '../components/userProfile'
+import Home from './../components/home/index'
+import AppRouteStyled from './styles'
 
 const Routes: React.FC = () => {
   return (
-    <Switch>
-      <Route exact path='/' component={Home}/>
-    </Switch>
+    <AppRouteStyled>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/user/:id" component={UserProfile} />
+      </Switch>
+    </AppRouteStyled>
   )
 }
 

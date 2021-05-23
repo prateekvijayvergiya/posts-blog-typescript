@@ -12,7 +12,7 @@ type initialStateType = {
 
 const initialState: initialStateType = {
   posts: [],
-  isLoading: false,
+  isLoading: true,
 }
 
 export const getPosts = createAsyncThunk('posts/search', async () => {
