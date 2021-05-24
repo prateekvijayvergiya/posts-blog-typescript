@@ -19,12 +19,10 @@ const Home: React.FC = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    console.log('running effect')
-    dispatch(getPosts())
-  }, [dispatch])
+    !posts.data && dispatch(getPosts())
+  }, [dispatch, posts.data])
 
-  console.log(posts)
-  return isLoading ? <CircularProgress/> : <PostList {...posts}/>
+  return isLoading ? <CircularProgress/> : <PostList/>
 }
 
 export default Home

@@ -15,7 +15,7 @@ const initialState: initialStateType = {
   isLoading: true,
 }
 
-export const getUser = createAsyncThunk('posts/search', async (id: string) => {
+export const getUser = createAsyncThunk('user/search', async (id: string) => {
   const userData = await axios
     .get(`${BASE_URL}${id}`, { headers: { 'app-id': APP_ID } })
     .then(({data}) => {
